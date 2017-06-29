@@ -69,7 +69,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
             });
             
             this.loadTemplateWidget();
-            
+            this.loadSenscapeBootloaderWidget();
             this.loadLuaEditorWidget();
             
             // Create our workspace upper right corner triangle menu
@@ -172,7 +172,28 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
                 }
             );
         },
-           /**
+        /**
+         * Load Senscape Bootloader Wedget via chilipeppr.load()
+         */
+        loadSenscapeBootloaderWidget: function(callback) {
+            chilipeppr.load(
+                "#com-senscape-widget-bootloader-instance",
+                "http://raw.githubusercontent.com/bastian-f/widget-senscape-bootlader/master/auto-generated-widget.html",
+                function() {
+                    // Callback after widget loaded into #myDivComSenscapeWidgetBootloader
+                    // Now use require.js to get reference to instantiated widget
+                    cprequire(
+                        ["inline:com-senscape-widget-bootloader"], // the id you gave your widget
+                        function(myObjComSenscapeWidgetBootloader) {
+                            // Callback that is passed reference to the newly loaded widget
+                            console.log("Widget / Senscape Bootloader just got loaded.", myObjComSenscapeWidgetBootloader);
+                            myObjComSenscapeWidgetBootloader.init();
+                        }
+                    );
+                }
+            );
+        },
+        /**
          * Load the Lua Editor Widget widget via chilipeppr.load()
          */
         loadLuaEditorWidget: function(callback) {
