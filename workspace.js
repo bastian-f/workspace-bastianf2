@@ -71,6 +71,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
             this.loadTemplateWidget();
             this.loadSenscapeBootloaderWidget();
             this.loadLuaEditorWidget();
+            this.loadDropTestWidget();
             
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
@@ -192,6 +193,27 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
                     );
                 }
             );
+        },
+                /**
+         * Load Senscape Bootloader Wedget via chilipeppr.load()
+         */
+        loadDropTestWidget: function(callback) {
+    chilipeppr.load(
+  "#drop-test-instance",
+  "http://raw.githubusercontent.com/chilipeppr/elem-dragdrop/master/auto-generated-widget.html",
+  function() {
+    // Callback after widget loaded into #myDivElemDragdrop
+    // Now use require.js to get reference to instantiated widget
+    cprequire(
+      ["inline:drop-test"], // the id you gave your widget
+      function(myObjElemDragdrop) {
+        // Callback that is passed reference to the newly loaded widget
+        console.log("Element / Drag Drop just got loaded.", myObjElemDragdrop);
+        myObjElemDragdrop.init();
+      }
+    );
+  }
+);
         },
         /**
          * Load the Lua Editor Widget widget via chilipeppr.load()
