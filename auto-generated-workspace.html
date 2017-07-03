@@ -137,6 +137,11 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
         fiddleurl: "http://ide.c9.io/bastianf/chillipeppr-test-2", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
         githuburl: "http://github.com/bastian-f/workspace-bastianf2", // The backing github repo
         testurl: "http://chillipeppr-test-2-bastianf.c9users.io/workspace.html", // The standalone working widget so can view it working by itself
+           foreignSubscribe: {
+            "/com-chilipeppr-elem-dragdrop/ondragover": "The Chilipeppr drag drop element will publish on channel /com-chilipeppr-elem-dragdrop/ondropped when a file is dropped so we subscribe to it so we can load a Gcode file when the user drags it onto the browser. It also adds a hover class to the bound DOM elem so we can add a CSS to hilite on hover",
+            "/com-chilipeppr-elem-dragdrop/ondragleave": "We need to know when the drag is over to remove the CSS hilites.",
+            "/com-chilipeppr-widget-gcode/resize": "We watch if the Gcode viewer resizes so that we can reposition or resize other elements in the workspace. Specifically we ask the Serial Port Console to resize. We also redraw the 3D Viewer so it fills the whole screen."
+},
         /**
          * Contains reference to the Console widget object. Hang onto the reference
          * so we can resize it when the window resizes because we want it to manually
