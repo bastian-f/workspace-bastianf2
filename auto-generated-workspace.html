@@ -161,13 +161,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
             // Most workspaces will instantiate the Serial Port JSON Server widget
             this.loadSpjsWidget();
             // Most workspaces will instantiate the Serial Port Console widget
-            this.loadConsoleWidget(function() {
-                setTimeout(function() { $(window).trigger('resize'); }, 100);
-            });
-            
-            this.loadTemplateWidget();
             this.loadSenscapeBootloaderWidget();
-            this.loadLuaEditorWidget();
             this.loadDropTestWidget();
             
             // Create our workspace upper right corner triangle menu
@@ -286,82 +280,6 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
                             // Callback that is passed reference to the newly loaded widget
                             console.log("Widget / Senscape Bootloader just got loaded.", myObjComSenscapeWidgetBootloader);
                             myObjComSenscapeWidgetBootloader.init();
-                        }
-                    );
-                }
-            );
-        },
-                /**
-         * Load Senscape Bootloader Wedget via chilipeppr.load()
-         */
-        loadDropTestWidget: function(callback) {
-    chilipeppr.load(
-  "#drop-test-instance",
-  "http://raw.githubusercontent.com/chilipeppr/elem-dragdrop/master/auto-generated-widget.html",
-  function() {
-    // Callback after widget loaded into #myDivElemDragdrop
-    // Now use require.js to get reference to instantiated widget
-    cprequire(
-      ["inline:drop-test"], // the id you gave your widget
-      function(myObjElemDragdrop) {
-        // Callback that is passed reference to the newly loaded widget
-        console.log("Element / Drag Drop just got loaded.", myObjElemDragdrop);
-        myObjElemDragdrop.init();
-      }
-    );
-  }
-);
-        },
-        /**
-         * Load the Lua Editor Widget widget via chilipeppr.load()
-         */
-        loadLuaEditorWidget: function(callback) {
-
-            var that = this;
-
-            chilipeppr.load(
-            "#com-chilipeppr-luaeditor-instance",
-            "http://raw.githubusercontent.com/chilipeppr/widget-luaeditor/master/auto-generated-widget.html",
-            function() {
-                // Callback after widget loaded into #myDivWidgetLuaeditor
-                // Now use require.js to get reference to instantiated widget
-                cprequire(
-                    ["inline:com-chilipeppr-widget-luaeditor"], // the id you gave your widget
-                    function(myObjWidgetLuaeditor) {
-                        // Callback that is passed reference to the newly loaded widget
-                        console.log("Widget / Lua Editor just got loaded.", myObjWidgetLuaeditor);
-                    myObjWidgetLuaeditor.init();
-                    }
-                );
-            }
-            );
-        },
-        /**
-         * Load the Console widget via chilipeppr.load()
-         */
-        loadConsoleWidget: function(callback) {
-            var that = this;
-            chilipeppr.load(
-                "#com-chilipeppr-widget-spconsole-instance",
-                "http://fiddle.jshell.net/chilipeppr/rczajbx0/show/light/",
-                function() {
-                    // Callback after widget loaded into #com-chilipeppr-widget-spconsole-instance
-                    cprequire(
-                        ["inline:com-chilipeppr-widget-spconsole"], // the id you gave your widget
-                        function(mywidget) {
-                            // Callback that is passed reference to your newly loaded widget
-                            console.log("My Console widget just got loaded.", mywidget);
-                            that.widgetConsole = mywidget;
-                            
-                            // init the serial port console
-                            // 1st param tells the console to use "single port mode" which
-                            // means it will only show data for the green selected serial port
-                            // rather than for multiple serial ports
-                            // 2nd param is a regexp filter where the console will filter out
-                            // annoying messages you don't generally want to see back from your
-                            // device, but that the user can toggle on/off with the funnel icon
-                            that.widgetConsole.init(true, /myfilter/);
-                            if (callback) callback(mywidget);
                         }
                     );
                 }
