@@ -73,9 +73,9 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
           //  this.loadDropTestWidget();
             
             // Create our workspace upper right corner triangle menu
-           // this.loadWorkspaceMenu();
+            this.loadWorkspaceMenu();
             // Add our billboard to the menu (has name, url, picture of workspace)
-         //   this.addBillboardToWorkspaceMenu();
+            this.addBillboardToWorkspaceMenu();
             
             // Setup an event to react to window resize. This helps since
             // some of our widgets have a manual resize to cleanly fill
@@ -197,7 +197,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
          * Load the workspace menu and show the pubsubviewer and fork links using
          * our pubsubviewer widget that makes those links for us.
          */
-    /*    loadWorkspaceMenu: function(callback) {
+    loadWorkspaceMenu: function(callback) {
             // Workspace Menu with Workspace Billboard
             var that = this;
             chilipeppr.load(
@@ -219,6 +219,5 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
                 }
             );
         },
-        */
     }
 });

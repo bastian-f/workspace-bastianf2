@@ -86,24 +86,6 @@
     padding: 4px 10px 10px 10px;
     background-color: rgba(255, 255, 255, 0.5);
 }
-
-.instructions-container {
-    border: 1px solid #ddd;
-    border-radius:5px;
-}
-
-.instructions {
-    text-align: justify;
-    text-justify: inter-word;
-    padding-right: 10px;
-}
-
-#instructions-title {
-    padding: 10px;
-    width: auto;
-    display: block;
-    border-bottom: 1px solid #ddd;
-}
     </style>
 
     <script type='text/javascript'>
@@ -348,28 +330,13 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
                 <!-- Left Column -->
                 <!-- Change the width by adjusting col-md-4 to be col-md-3 for skinnier, or col-md-5 for wider -->
                 <!-- You must have all columns add up to 12 since we use bootstrap's col-md technique, i.e. col-md-2, col-md-7, col-md-3 adds to 12 -->
-
                 <div class="col-md-4 col-pad10">
-                    <div class="instructions-container"
-
-                    <p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Instructions</span> </p>
-                    <div class="instructions"><p>
-
-                            <ol>
-                                <li>Download the Serial Port Server: Click on the dropdown menu on upper right corner and choose your platform.
-                                    This will download a small program that establishes a connection to your Senscape Board. Execute it.</li>
-                                <li>Connect your Senscape Board and click on the 'Refresh' icon in the Serial Port Server Widget in the center of this page.
-                                    Choose the port corresponding to your Senscape Board.</li>
-                                <li>Upload the new version of the firmware by clicking on the 'Reprogram' button.</li>
-                            </ol>
-                        </p>
-                    </div>
-                    </div>
+                    
                 </div>
 
                 <!-- Center Column -->
                 <div class="col-md-5 col-pad10">
-
+                    
                     <div id="com-senscape-widget-bootloader-instance">
                         <p class="sample">Senscape Bootloader Widget goes here</p>
                     </div>
