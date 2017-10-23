@@ -189,7 +189,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
             // Callback after widget loaded into #myDivComSenscapeWidgetSerialport
             // Now use require.js to get reference to instantiated widget
             cprequire(
-                ["inline:com-senscape-widget-serialport"], // the id you gave your widget
+                ["inline:com-chilipeppr-widget-serialport"], // the id you gave your widget
                 function(myObjComSenscapeWidgetSerialport) {
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / Serial Port JSON Server just got loaded.", myObjComSenscapeWidgetSerialport);
