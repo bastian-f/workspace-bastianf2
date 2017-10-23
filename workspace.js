@@ -148,8 +148,39 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
             var that = this;
 
             chilipeppr.load(
-                "#com-senscape-widget-serialport-instance",
-              //  "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+                "#com-chilipeppr-widget-serialport-instance",
+                "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+                function() {
+                    console.log("mycallback got called after loading spjs module");
+                    cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
+                        //console.log("inside require of " + fm.id);
+                        spjs.setSingleSelectMode();
+                        spjs.init({
+                            isSingleSelectMode: true,
+                            defaultBuffer: "default",
+                            defaultBaud: 115200,
+                            bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
+                        });
+                        //spjs.showBody();
+                        //spjs.consoleToggle();
+
+                        that.widgetSpjs - spjs;
+                        
+                        if (callback) callback(spjs);
+
+                    });
+                }
+            );
+        },
+        /**
+         * Load the Serial Port JSON Server widget via chilipeppr.load()
+         */
+        loadCustomSpjsWidget: function(callback) {
+
+            var that = this;
+
+            chilipeppr.load(
+                "#com-senscape-serialport-instance",
                 "http://raw.githubusercontent.com/bastian-f/widget-spjs/master/auto-generated-widget.html",
                 function() {
                     console.log("mycallback got called after loading spjs module");
@@ -166,7 +197,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
                         //spjs.consoleToggle();
 
                         that.widgetSpjs - spjs;
-                        
+
                         if (callback) callback(spjs);
 
                     });
