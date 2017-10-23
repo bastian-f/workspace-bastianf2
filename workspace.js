@@ -178,31 +178,30 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
          */
         loadCustSpjsWidget: function(callback) {
 
-            // Inject new div to contain widget or use an existing div with an ID
-            $("body").append('<' + 'div id="myDivWidgetSerialport"><' + '/div>');
+            var that = this;
 
             chilipeppr.load(
-                "#myDivWidgetSerialport",
+                "#com-chilipeppr-widget-serialport-instance",
                 "http://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
                 function() {
-                    // Callback after widget loaded into #myDivWidgetSerialport
-                    // Now use require.js to get reference to instantiated widget
-                    cprequire(
-                        ["inline:com-chilipeppr-widget-serialport"], // the id you gave your widget
-                        function(myObjWidgetSerialport) {
-                            // Callback that is passed reference to the newly loaded widget
-                            console.log("Widget / Serial Port JSON Server just got loaded.", myObjWidgetSerialport);
-                            myObjWidgetSerialport.setSingleSelectMode();
-                            myObjWidgetSerialport.init(
-                                {
-                                    isSingleSelectMode: true,
-                                    defaultBuffer: "default",
-                                    defaultBaud: 115200,
-                                    bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
-                                }
-                            );
-                        }
-                    );
+                    console.log("mycallback got called after loading spjs module");
+                    cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
+                        //console.log("inside require of " + fm.id);
+                        spjs.setSingleSelectMode();
+                        spjs.init({
+                            isSingleSelectMode: true,
+                            defaultBuffer: "default",
+                            defaultBaud: 115200,
+                            bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
+                        });
+                        //spjs.showBody();
+                        //spjs.consoleToggle();
+
+                        that.widgetSpjs - spjs;
+
+                        if (callback) callback(spjs);
+
+                    });
                 }
             );
 
