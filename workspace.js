@@ -67,7 +67,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
         init: function() {
 
             // Most workspaces will instantiate the Serial Port JSON Server widget
-            this.loadSpjsWidget();
+       //     this.loadSpjsWidget();
             this.loadCustSpjsWidget();
             // Most workspaces will instantiate the Serial Port Console widget
             this.loadSenscapeBootloaderWidget();
@@ -144,7 +144,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
         /**
          * Load the Serial Port JSON Server widget via chilipeppr.load()
          */
-        loadSpjsWidget: function(callback) {
+  /*      loadSpjsWidget: function(callback) {
 
             var that = this;
 
