@@ -178,7 +178,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
 
             // Most workspaces will instantiate the Serial Port JSON Server widget
             this.loadSpjsWidget();
-            this.loadCustomSpjsWidget();
+            this.loadCustSpjsWidget();
             // Most workspaces will instantiate the Serial Port Console widget
             this.loadSenscapeBootloaderWidget();
           //  this.loadDropTestWidget();
@@ -286,36 +286,30 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
         /**
          * Load the Serial Port JSON Server widget via chilipeppr.load()
          */
-        loadCustomSpjsWidget: function(callback) {
+        loadCustSpjsWidget: function(callback) {
 
             var that = this;
+        // Inject new div to contain widget or use an existing div with an ID
+        $("body").append('<' + 'div id="myDivComSenscapeWidgetSerialport"><' + '/div>');
 
-            chilipeppr.load(
-                "#com-senscape-serialport-instance",
-                "http://raw.githubusercontent.com/bastian-f/widget-spjs/master/auto-generated-widget.html",
-                function() {
-                    console.log("mycallback got called after loading spjs module");
-                    cprequire(["inline:com-senscape-widget-serialport"], function(spjs) {
-                        //console.log("inside require of " + fm.id);
-                        spjs.setSingleSelectMode();
-                        spjs.init({
-                            isSingleSelectMode: true,
-                            defaultBuffer: "default",
-                            defaultBaud: 115200,
-                            bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
-                        });
-                        //spjs.showBody();
-                        //spjs.consoleToggle();
-
-                        that.widgetSpjs - spjs;
-
-                        if (callback) callback(spjs);
-
-                    });
+    chilipeppr.load(
+        "#myDivComSenscapeWidgetSerialport",
+        "http://raw.githubusercontent.com/bastian-f/widget-spjs/master/auto-generated-widget.html",
+        function() {
+            // Callback after widget loaded into #myDivComSenscapeWidgetSerialport
+            // Now use require.js to get reference to instantiated widget
+            cprequire(
+                ["inline:com-senscape-widget-serialport"], // the id you gave your widget
+                function(myObjComSenscapeWidgetSerialport) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / Serial Port JSON Server just got loaded.", myObjComSenscapeWidgetSerialport);
+                    myObjComSenscapeWidgetSerialport.init();
                 }
             );
+        }
+    );
         },
-        /**
+    /**
          * Load Senscape Bootloader Widget via chilipeppr.load()
          */
         loadSenscapeBootloaderWidget: function(callback) {
@@ -411,7 +405,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
                         Serial Port Widget goes here
                     </div>
 
-                    <div id="com-senscape-widget-serialport-instance">
+                    <div id="myDivComSenscapeWidgetSerialport">
                         Serial Port Widget goes here
                     </div>
                 </div>
