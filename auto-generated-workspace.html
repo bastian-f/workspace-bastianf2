@@ -302,7 +302,15 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
                         function(myObjWidgetSerialport) {
                             // Callback that is passed reference to the newly loaded widget
                             console.log("Widget / Serial Port JSON Server just got loaded.", myObjWidgetSerialport);
-                            myObjWidgetSerialport.init();
+                            myObjWidgetSerialport.setSingleSelectMode();
+                            myObjWidgetSerialport.init(
+                                {
+                                    isSingleSelectMode: true,
+                                    defaultBuffer: "default",
+                                    defaultBaud: 115200,
+                                    bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
+                                }
+                            );
                         }
                     );
                 }
