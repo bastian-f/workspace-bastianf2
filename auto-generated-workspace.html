@@ -258,11 +258,12 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
             var that = this;
 
             chilipeppr.load(
-                "#com-chilipeppr-widget-serialport-instance",
-                "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+                "#com-senscape-widget-serialport-instance",
+              //  "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+                "http://raw.githubusercontent.com/bastian-f/widget-senscape-bootlader/master/auto-generated-widget.html",
                 function() {
                     console.log("mycallback got called after loading spjs module");
-                    cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
+                    cprequire(["inline:com-senscape-widget-serialport"], function(spjs) {
                         //console.log("inside require of " + fm.id);
                         spjs.setSingleSelectMode();
                         spjs.init({
