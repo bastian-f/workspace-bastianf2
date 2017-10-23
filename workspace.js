@@ -178,26 +178,26 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
          */
         loadCustSpjsWidget: function(callback) {
 
-            var that = this;
-        // Inject new div to contain widget or use an existing div with an ID
-        $("body").append('<' + 'div id="myDivComSenscapeWidgetSerialport"><' + '/div>');
+            // Inject new div to contain widget or use an existing div with an ID
+            $("body").append('<' + 'div id="myDivWidgetSerialport"><' + '/div>');
 
-    chilipeppr.load(
-        "#myDivComSenscapeWidgetSerialport",
-        "http://raw.githubusercontent.com/bastian-f/widget-spjs/master/auto-generated-widget.html",
-        function() {
-            // Callback after widget loaded into #myDivComSenscapeWidgetSerialport
-            // Now use require.js to get reference to instantiated widget
-            cprequire(
-                ["inline:com-chilipeppr-widget-serialport"], // the id you gave your widget
-                function(myObjComSenscapeWidgetSerialport) {
-                    // Callback that is passed reference to the newly loaded widget
-                    console.log("Widget / Serial Port JSON Server just got loaded.", myObjComSenscapeWidgetSerialport);
-                    myObjComSenscapeWidgetSerialport.init();
+            chilipeppr.load(
+                "#myDivWidgetSerialport",
+                "http://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
+                function() {
+                    // Callback after widget loaded into #myDivWidgetSerialport
+                    // Now use require.js to get reference to instantiated widget
+                    cprequire(
+                        ["inline:com-chilipeppr-widget-serialport"], // the id you gave your widget
+                        function(myObjWidgetSerialport) {
+                            // Callback that is passed reference to the newly loaded widget
+                            console.log("Widget / Serial Port JSON Server just got loaded.", myObjWidgetSerialport);
+                            myObjWidgetSerialport.init();
+                        }
+                    );
                 }
             );
-        }
-    );
+
         },
     /**
          * Load Senscape Bootloader Widget via chilipeppr.load()
