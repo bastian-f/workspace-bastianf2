@@ -88,3 +88,7 @@
     display: block;
     border-bottom: 1px solid #ddd;
 }
+
+.navbar {
+    background-color:#444d5d;
+}
