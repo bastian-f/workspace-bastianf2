@@ -144,7 +144,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
         /**
          * Load the Serial Port JSON Server widget via chilipeppr.load()
          */
-  /*      loadSpjsWidget: function(callback) {
+        loadSpjsWidget: function(callback) {
 
             var that = this;
 
@@ -182,7 +182,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
 
             chilipeppr.load(
                 "#com-chilipeppr-widget-serialport-instance",
-                "http://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
+                "http://raw.githubusercontent.com/bastian-f/widget-spjs/master/auto-generated-widget.html",
                 function() {
                     console.log("mycallback got called after loading spjs module");
                     cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {

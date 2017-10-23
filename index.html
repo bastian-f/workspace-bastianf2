@@ -254,45 +254,45 @@
                 /**
                  * Load the Serial Port JSON Server widget via chilipeppr.load()
                  */
-                /*      loadSpjsWidget: function(callback) {
+                loadSpjsWidget: function(callback) {
 
-                          var that = this;
+                    var that = this;
 
-                          chilipeppr.load(
-                              "#com-chilipeppr-widget-serialport-instance",
-                              "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
-                              function() {
-                                  console.log("mycallback got called after loading spjs module");
-                                  cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
-                                      //console.log("inside require of " + fm.id);
-                                      spjs.setSingleSelectMode();
-                                      spjs.init({
-                                          isSingleSelectMode: true,
-                                          defaultBuffer: "default",
-                                          defaultBaud: 115200,
-                                          bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
-                                      });
-                                      //spjs.showBody();
-                                      //spjs.consoleToggle();
+                    chilipeppr.load(
+                        "#com-chilipeppr-widget-serialport-instance",
+                        "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+                        function() {
+                            console.log("mycallback got called after loading spjs module");
+                            cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
+                                //console.log("inside require of " + fm.id);
+                                spjs.setSingleSelectMode();
+                                spjs.init({
+                                    isSingleSelectMode: true,
+                                    defaultBuffer: "default",
+                                    defaultBaud: 115200,
+                                    bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
+                                });
+                                //spjs.showBody();
+                                //spjs.consoleToggle();
 
-                                      that.widgetSpjs - spjs;
+                                that.widgetSpjs - spjs;
 
-                                      if (callback) callback(spjs);
+                                if (callback) callback(spjs);
 
-                                  });
-                              }
-                          );
-                      },
-                      /**
-                       * Load the Serial Port JSON Server widget via chilipeppr.load()
-                       */
+                            });
+                        }
+                    );
+                },
+                /**
+                 * Load the Serial Port JSON Server widget via chilipeppr.load()
+                 */
                 loadCustSpjsWidget: function(callback) {
 
                     var that = this;
 
                     chilipeppr.load(
                         "#com-chilipeppr-widget-serialport-instance",
-                        "http://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
+                        "http://raw.githubusercontent.com/bastian-f/widget-spjs/master/auto-generated-widget.html",
                         function() {
                             console.log("mycallback got called after loading spjs module");
                             cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
@@ -372,6 +372,64 @@
 
 <body>
 
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <!--    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>  -->
+                <!--   <li><a href="#">Link</a></li>  -->
+                <!--  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </li>  -->
+            </ul>
+            <form class="navbar-form navbar-left">
+                <!--   <div class="form-group">
+                     <input type="text" class="form-control" placeholder="Search">
+                   </div>  -->
+                <!--   <button type="submit" class="btn btn-default">Submit</button>  -->
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">English <span class="sr-only">(current)</span></a></li>
+                <li><a href="index-es.html?forcerefresh=true">Castellano</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Download Serial Port Server <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="binaries/serial-port-json-server">Linux</a></li>
+                        <li><a href="#">Mac</a></li>
+                        <li><a href="binaries/serial-port-json-server.exe">Windows</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
 <!--   <div id="com-chilipeppr-widget-flash-instance"></div> -->
 
 <div id="com-chilipeppr-workspace-bastianf2" class="xhidden">
@@ -449,4 +507,4 @@
 
 </body>
 
-</html>
+</html>`
