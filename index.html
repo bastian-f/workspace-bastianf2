@@ -177,7 +177,7 @@
                 init: function() {
 
                     // Most workspaces will instantiate the Serial Port JSON Server widget
-                    this.loadSpjsWidget();
+                    //     this.loadSpjsWidget();
                     this.loadCustSpjsWidget();
                     // Most workspaces will instantiate the Serial Port Console widget
                     this.loadSenscapeBootloaderWidget();
@@ -254,38 +254,38 @@
                 /**
                  * Load the Serial Port JSON Server widget via chilipeppr.load()
                  */
-                loadSpjsWidget: function(callback) {
+                /*      loadSpjsWidget: function(callback) {
 
-                    var that = this;
+                          var that = this;
 
-                    chilipeppr.load(
-                        "#com-chilipeppr-widget-serialport-instance",
-                        "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
-                        function() {
-                            console.log("mycallback got called after loading spjs module");
-                            cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
-                                //console.log("inside require of " + fm.id);
-                                spjs.setSingleSelectMode();
-                                spjs.init({
-                                    isSingleSelectMode: true,
-                                    defaultBuffer: "default",
-                                    defaultBaud: 115200,
-                                    bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
-                                });
-                                //spjs.showBody();
-                                //spjs.consoleToggle();
+                          chilipeppr.load(
+                              "#com-chilipeppr-widget-serialport-instance",
+                              "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+                              function() {
+                                  console.log("mycallback got called after loading spjs module");
+                                  cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
+                                      //console.log("inside require of " + fm.id);
+                                      spjs.setSingleSelectMode();
+                                      spjs.init({
+                                          isSingleSelectMode: true,
+                                          defaultBuffer: "default",
+                                          defaultBaud: 115200,
+                                          bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
+                                      });
+                                      //spjs.showBody();
+                                      //spjs.consoleToggle();
 
-                                that.widgetSpjs - spjs;
+                                      that.widgetSpjs - spjs;
 
-                                if (callback) callback(spjs);
+                                      if (callback) callback(spjs);
 
-                            });
-                        }
-                    );
-                },
-                /**
-                 * Load the Serial Port JSON Server widget via chilipeppr.load()
-                 */
+                                  });
+                              }
+                          );
+                      },
+                      /**
+                       * Load the Serial Port JSON Server widget via chilipeppr.load()
+                       */
                 loadCustSpjsWidget: function(callback) {
 
                     var that = this;
@@ -401,10 +401,10 @@
                 <p class="sample">Senscape Bootloader Widget goes here</p>
             </div>
 
-            <div id="com-chilipeppr-widget-serialport-instance">
-                Serial Port Widget goes here
-            </div>
-
+            <!--         <div id="com-chilipeppr-widget-serialport-instance">
+                         Serial Port Widget goes here
+                     </div>
+             -->
             <div id="myDivComSenscapeWidgetSerialport">
                 Serial Port Widget goes here
             </div>
