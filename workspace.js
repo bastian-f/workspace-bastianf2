@@ -27,7 +27,7 @@ cprequire_test(["inline:com-chilipeppr-workspace-bastianf2"], function(ws) {
     ws.init();
     
     // Do some niceties for testing like margins on widget and title for browser
-    $('title').html("bastianf2 Workspace");
+    $('title').html("JMA - Senscape Bootloader");
     $('body').css('padding', '10px');
 
 } /*end_test*/ );
@@ -74,9 +74,9 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
           //  this.loadDropTestWidget();
             
             // Create our workspace upper right corner triangle menu
-            this.loadWorkspaceMenu();
+       //     this.loadWorkspaceMenu();
             // Add our billboard to the menu (has name, url, picture of workspace)
-            this.addBillboardToWorkspaceMenu();
+       //     this.addBillboardToWorkspaceMenu();
             
             // Setup an event to react to window resize. This helps since
             // some of our widgets have a manual resize to cleanly fill
@@ -119,62 +119,7 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
             if (this.widgetConsole) this.widgetConsole.resize();
         },
         /**
-         * Load the Template widget via chilipeppr.load() so folks have a sample
-         * widget they can fork as a starting point for their own.
-         */
-        loadTemplateWidget: function(callback) {
-
-            chilipeppr.load(
-                "#com-chilipeppr-widget-template-instance",
-                "http://raw.githubusercontent.com/chilipeppr/widget-template/master/auto-generated-widget.html",
-                function() {
-                    // Callback after widget loaded into #myDivWidgetTemplate
-                    // Now use require.js to get reference to instantiated widget
-                    cprequire(
-                        ["inline:com-chilipeppr-widget-template"], // the id you gave your widget
-                        function(myObjWidgetTemplate) {
-                            // Callback that is passed reference to the newly loaded widget
-                            console.log("Widget / Template just got loaded.", myObjWidgetTemplate);
-                            myObjWidgetTemplate.init();
-                        }
-                    );
-                }
-            );
-        },
-        /**
-         * Load the Serial Port JSON Server widget via chilipeppr.load()
-         */
-        loadSpjsWidget: function(callback) {
-
-            var that = this;
-
-            chilipeppr.load(
-                "#com-chilipeppr-widget-serialport-instance",
-                "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
-                function() {
-                    console.log("mycallback got called after loading spjs module");
-                    cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
-                        //console.log("inside require of " + fm.id);
-                        spjs.setSingleSelectMode();
-                        spjs.init({
-                            isSingleSelectMode: true,
-                            defaultBuffer: "default",
-                            defaultBaud: 115200,
-                            bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
-                        });
-                        //spjs.showBody();
-                        //spjs.consoleToggle();
-
-                        that.widgetSpjs - spjs;
-                        
-                        if (callback) callback(spjs);
-
-                    });
-                }
-            );
-        },
-        /**
-         * Load the Serial Port JSON Server widget via chilipeppr.load()
+         * Load the custom Serial Port JSON Server widget via chilipeppr.load()
          */
         loadCustSpjsWidget: function(callback) {
 
@@ -224,32 +169,6 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
                             myObjComSenscapeWidgetBootloader.init();
                         }
                     );
-                }
-            );
-        },
-        /**
-         * Load the workspace menu and show the pubsubviewer and fork links using
-         * our pubsubviewer widget that makes those links for us.
-         */
-    loadWorkspaceMenu: function(callback) {
-            // Workspace Menu with Workspace Billboard
-            var that = this;
-            chilipeppr.load(
-                "http://fiddle.jshell.net/chilipeppr/zMbL9/show/light/",
-                function() {
-                    require(['inline:com-chilipeppr-elem-pubsubviewer'], function(pubsubviewer) {
-
-                        var el = $('#' + that.id + ' .com-chilipeppr-ws-menu .dropdown-menu-ws');
-                        console.log("got callback for attachto menu for workspace. attaching to el:", el);
-
-                        pubsubviewer.attachTo(
-                            el,
-                            that,
-                            "Workspace"
-                        );
-                        
-                        if (callback) callback();
-                    });
                 }
             );
         },
