@@ -74,6 +74,7 @@
 .instructions-container {
     border: 1px solid #ddd;
     border-radius:5px;
+    margin-bottom:10px;
 }
 
 .instructions {
@@ -87,9 +88,10 @@
     width: auto;
     display: block;
     border-bottom: 1px solid #ddd;
+    background-color: #f5f5f5;
 }
 
-.navbar {
+#nvbr {
     background-color:#444d5d;
     padding-top: 0;
     padding-bottom: 0;
