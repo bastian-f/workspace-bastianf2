@@ -7,13 +7,12 @@
     <title>Workspace / bastianf2</title>
 
     <!-- ChiliPeppr is based on bootstrap CSS. -->
-   <!-- <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- jQuery library -->
-   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
     <!-- Latest compiled JavaScript -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
@@ -361,41 +360,16 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <!--    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>  -->
-                <!--   <li><a href="#">Link</a></li>  -->
-                <!--  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">One more separated link</a></li>
-                    </ul>
-                  </li>  -->
             </ul>
             <form class="navbar-form navbar-left">
-                <!--   <div class="form-group">
-                     <input type="text" class="form-control" placeholder="Search">
-                   </div>  -->
-                <!--   <button type="submit" class="btn btn-default">Submit</button>  -->
             </form>
             <ul class="nav navbar-nav navbar-right">
+                <!-- English -->
+                <!--<li class="active"><a href="#">English <span class="sr-only">(current)</span></a></li>-->
+                <!--<li><a href="index-es.html?forcerefresh=true">Castellano</a></li>-->
+                <!-- Castellano -->
                 <li><a href="index.html?forcerefresh=true">English</a></li>
                 <li class="active"><a href="#">Castellano <span class="sr-only">(current)</span></a></li>
-                <!--
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Download Serial Port Server <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="binaries/serial-port-json-server">Linux</a></li>
-                        <!--  <li><a href="#">Mac</a></li> -->
-                <!--
-                        <li><a href="binaries/serial-port-json-server.exe">Windows</a></li>
-                    </ul>
-                </li>
-                -->
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -406,69 +380,83 @@ cpdefine("inline:com-chilipeppr-workspace-bastianf2", ["chilipeppr_ready"], func
 <!--   <div id="com-chilipeppr-widget-flash-instance"></div> -->
 
     <div id="com-chilipeppr-workspace-bastianf2" class="xhidden">
-
         <div class="container-fluid">
             <div class="row">
-
                 <!-- Left Column -->
                 <!-- Change the width by adjusting col-md-4 to be col-md-3 for skinnier, or col-md-5 for wider -->
                 <!-- You must have all columns add up to 12 since we use bootstrap's col-md technique, i.e. col-md-2, col-md-7, col-md-3 adds to 12 -->
-
                 <div class="col-md-3 col-pad10">
                 </div>
-
                 <!-- Center Column -->
                 <div class="col-md-6 col-pad10">
-
-
-
+                    <!--English -->
+                    <!--<div class="instructions-container"-->
+                        <!--<p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Instructions</span> </p>-->
+                        <!--<div class="instructions">-->
+                            <!--<p><ol>-->
+                                <!--<li>For first time users, please <a href="binaries/installer.exe" class="btn btn-info btn-xs">-->
+                                        <!--<span class="glyphicon"></span>Download</a> and install the JMA-KPROX application.</li>-->
+                                <!--<li>Connect your K-PROX and execute the launcher application.</li>-->
+                                <!--<li>Your K-PROX should now appear in the Serial Port Server list below. Please select it.</li>-->
+                                <!--<li>Click the 'Reprogram' button to upload the latest firmware version for your K-PROX.</li>-->
+                            <!--</ol></p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--Castellano -->
                     <div class="instructions-container"
-                    <p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Instructions</span> </p>
-                    <div class="instructions"><p>
-
-                        <ol>
-                        <!--
-                            <li>If you are using Windows and do not have installed the drivers for your K-PROX yet
-                            <a href="https://www.silabs.com/documents/public/software/CP210x_Windows_Drivers.zip" class="btn btn-info btn-xs">
-                                <span class="glyphicon"></span>Download</a> them. You get a zip archive. After downloading and unpacking it, execute the exe that suits your platform.</li>
-                            <li>Download the Serial Port Server: Click on the dropdown menu in the upper right corner and choose your platform.
-                                This will download a small program that establishes a connection to your K-PROX. Execute it, please.</li>
-                            <li>Connect your K-PROX and  <a href="http://52.29.6.200/?forcerefresh=true" class="btn btn-info btn-xs">
-                                <span class="glyphicon glyphicon-refresh"></span> Refresh
-                            </a> </li>
-                            <li> Your K-PROX should now have appeared in the Serial Port Server Widget below. Select it, please.</li>
-                            <li> Upload the new version of the firmware by clicking on the 'Reprogram' button.</li>
-                            -->
-                        <li>Para nuevos usuarios, <a href="binaries/installer.exe" class="btn btn-info btn-xs">
-                                <span class="glyphicon"></span>Descargar</a> e instalar la aplicación JMA-KPROX.</li>
-                        <li>Conecte el dispositivo K-PROX a su ordenador y ejecute la aplicación anterior.</li>
-                        <li>Su K-PROX ahora debería aparecer en la lista de dispositivos. Por favor, selecciónelo..</li>
-                        <li>Haga clic en el botón 'Reprogram' para cargar la última versión de firmware para su K-PROX.</li>
-                        </ol>
-                        </p>
+                        <p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Instrucciones</span> </p>
+                        <div class="instructions">
+                            <p><ol>
+                                <li>Para nuevos usuarios, <a href="binaries/installer.exe" class="btn btn-info btn-xs">
+                                    <span class="glyphicon"></span>Descargar</a> e instalar la aplicación JMA-KPROX.</li>
+                                <li>Conecte el dispositivo K-PROX a su ordenador y ejecute la aplicación anterior.</li>
+                                <li>Su K-PROX ahora debería aparecer en la lista de dispositivos. Por favor, selecciónelo.</li>
+                                <li>Haga clic en el botón 'Reprogram' para cargar la última versión de firmware para su K-PROX.</li>
+                            </ol></p>
+                        </div>
                     </div>
-                </div>
-
-
-                <div id="com-chilipeppr-widget-serialport-instance">
-                    Serial Port Widget goes here
-                </div>
-
-                <div id="com-senscape-widget-bootloader-instance">
-                        <p class="sample">Senscape Bootloader Widget goes here</p>
-                    </div>
-                    
-
-
-           <!--         <div id="myDivWidgetSerialport">
+                    <div id="com-chilipeppr-widget-serialport-instance">
                         Serial Port Widget goes here
                     </div>
-                </div>  -->
-
+                    <!-- English-->
+                    <!--<div class="instructions-container"-->
+                        <!--<p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Last Update: October 2018</span> </p>-->
+                        <!--<div class="instructions">-->
+                            <!--<p>-->
+                                <!--<strong>Version 7</strong>-->
+                                <!--This new update for the JMA K-Prox increases the range of RFiD tags that can be-->
+                                <!--duplicated. Certain tags, which could not be copied in the previous version, may now-->
+                                <!--be copied using the new “full-copy” option, which is invoked by pressing the COPY bottom-->
+                                <!--continuously for at least 5 seconds. But please note that this method does not allow the-->
+                                <!--tag to be reprogrammed. As before, most tags can be copied using a short (less than 5-->
+                                <!--second) press of the COPY button, which does allow them to be reprogrammed.”-->
+                            <!--</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!-- Castellano -->
+                    <div class="instructions-container"
+                        <p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Última actualización: Octubre 2018</span> </p>
+                        <div class="instructions">
+                            <p>
+                                <strong>Versión 7</strong>
+                                Esta nueva actualización para JMA K-Prox aumenta el rango de llaves de proximidad que se
+                                pueden duplicar. Algunas llaves que no podían ser copiadas en la versión anterior,
+                                 pueden ahora ser copiadas utilizando la nueva opción de programación “full-copy”, la
+                                cual puede activarse presionado el botón COPY durante al menos 5 segundos.
+                                Este nuevo método alternativo de copia no permite que las llaves puedan ser
+                                reprogramadas. No obstante, al igual que la versión anterior, la reprogramación de las
+                                llaves de proximidad se mantiene mientras no se aplique el citado método, es decir,
+                                aplicando una pulsación corta (menos de 5 segundos) del botón COPY.”
+                            </p>
+                        </div>
+                    </div>
+                    <div id="com-senscape-widget-bootloader-instance">
+                        <p class="sample">Senscape Bootloader Widget goes here</p>
+                    </div>
+                </div>
                 <!-- Right Column -->
                 <div class="col-md-3 col-pad10">
                 </div>
-
             </div>
         </div>
     </div>
