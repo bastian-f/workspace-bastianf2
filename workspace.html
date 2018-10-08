@@ -64,11 +64,11 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <!-- English -->
-                <li class="active"><a href="#">English <span class="sr-only">(current)</span></a></li>
-                <li><a href="index-es.html?forcerefresh=true">Castellano</a></li>
+                <!--<li class="active"><a href="#">English <span class="sr-only">(current)</span></a></li>-->
+                <!--<li><a href="index.html?forcerefresh=true">Castellano</a></li>-->
                 <!-- Castellano -->
-                <!--<li><a href="index.html?forcerefresh=true">English</a></li>-->
-                <!--<li class="active"><a href="#">Castellano <span class="sr-only">(current)</span></a></li>-->
+                <li><a href="index-en.html?forcerefresh=true">English</a></li>
+                <li class="active"><a href="#">Castellano <span class="sr-only">(current)</span></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -89,66 +89,64 @@
                 <!-- Center Column -->
                 <div class="col-md-6 col-pad10">
                     <!--English -->
-                    <div class="instructions-container"
-                        <p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Instructions</span> </p>
-                        <div class="instructions">
-                            <p><ol>
-                                <li>For first time users, please <a href="binaries/installer.exe" class="btn btn-info btn-xs">
-                                        <span class="glyphicon"></span>Download</a> and install the JMA-KPROX application.</li>
-                                <li>Connect your K-PROX and execute the launcher application.</li>
-                                <li>Your K-PROX should now appear in the Serial Port Server list below. Please select it.</li>
-                                <li>Click the 'Reprogram' button to upload the latest firmware version for your K-PROX.</li>
-                            </ol></p>
-                        </div>
-                    </div>
-                    <!--Castellano -->
                     <!--<div class="instructions-container"-->
-                        <!--<p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Instrucciones</span> </p>-->
+                        <!--<p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Instructions</span> </p>-->
                         <!--<div class="instructions">-->
                             <!--<p><ol>-->
-                                <!--<li>Para nuevos usuarios, <a href="binaries/installer.exe" class="btn btn-info btn-xs">-->
-                                    <!--<span class="glyphicon"></span>Descargar</a> e instalar la aplicación JMA-KPROX.</li>-->
-                                <!--<li>Conecte el dispositivo K-PROX a su ordenador y ejecute la aplicación anterior.</li>-->
-                                <!--<li>Su K-PROX ahora debería aparecer en la lista de dispositivos. Por favor, selecciónelo.</li>-->
-                                <!--<li>Haga clic en el botón 'Reprogram' para cargar la última versión de firmware para su K-PROX.</li>-->
+                                <!--<li>Connect your K-PROX and execute the launcher application.</li>-->
+                                <!--<li>Your K-PROX should now appear in the Serial Port Server list below. Please select it.</li>-->
+                                <!--<li>Click the 'Reprogram' button to upload the latest firmware version for your K-PROX.</li>-->
+                                <!--<li>Once the actualization is finished, you can disconnect the K-PROX.</li>-->
                             <!--</ol></p>-->
                         <!--</div>-->
                     <!--</div>-->
+                    <!--Castellano -->
+                    <div class="instructions-container"
+                        <p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Instrucciones</span> </p>
+                        <div class="instructions">
+                            <p><ol>
+                                <li>Conecte el dispositivo K-PROX a su ordenador y ejecute la aplicación.</li>
+                                <li>Su K-PROX ahora debería aparecer en la lista de dispositivos. Por favor, selecciónelo.</li>
+                                <li>Haga clic en el botón 'Reprogram' para cargar la última versión de firmware para su K-PROX.</li>
+                                <li>Cuando se finalice la actualización, desconectar la máquina.</li>
+                            </ol></p>
+                        </div>
+                    </div>
                     <div id="com-chilipeppr-widget-serialport-instance">
                         Serial Port Widget goes here
                     </div>
                     <!-- English-->
-                    <div class="instructions-container"
-                        <p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Last Update: October 2018</span> </p>
-                        <div class="update">
-                            <p><strong>Version 7</strong></p>
-                            <p>
-                                This new update for the JMA K-Prox increases the range of RFiD tags that can be
-                                duplicated. Certain tags, which could not be copied in the previous version, may now
-                                be copied using the new “full-copy” option, which is invoked by pressing the COPY bottom
-                                continuously for at least 5 seconds. But please note that this method does not allow the
-                                tag to be reprogrammed. As before, most tags can be copied using a short (less than 5
-                                second) press of the COPY button, which does allow them to be reprogrammed.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Castellano -->
                     <!--<div class="instructions-container"-->
-                        <!--<p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Última actualización: Octubre 2018</span> </p>-->
+                        <!--<p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Last Update: October 2018</span> </p>-->
                         <!--<div class="update">-->
-                            <!--<p><strong>Versión 7</strong></p>-->
+                            <!--<p><strong>Version 7</strong></p>-->
                             <!--<p>-->
-                                <!--Esta nueva actualización para JMA K-Prox aumenta el rango de llaves de proximidad que se-->
-                                <!--pueden duplicar. Algunas llaves que no podían ser copiadas en la versión anterior,-->
-                                 <!--pueden ahora ser copiadas utilizando la nueva opción de programación “full-copy”, la -->
-                                <!--cual puede activarse presionado el botón COPY durante al menos 5 segundos. -->
-                                <!--Este nuevo método alternativo de copia no permite que las llaves puedan ser -->
-                                <!--reprogramadas. No obstante, al igual que la versión anterior, la reprogramación de las -->
-                                <!--llaves de proximidad se mantiene mientras no se aplique el citado método, es decir, -->
-                                <!--aplicando una pulsación corta (menos de 5 segundos) del botón COPY.-->
+                                <!--This new update for the JMA K-Prox increases the range of RFiD tags that can be-->
+                                <!--duplicated. Certain tags, which could not be copied in the previous version, may now-->
+                                <!--be copied using the new “full-copy” option, which is invoked by pressing the COPY bottom-->
+                                <!--continuously for at least 5 seconds. But please note that this method does not allow the-->
+                                <!--tag to be reprogrammed. As before, most tags can be copied using a short (less than 5-->
+                                <!--second) press of the COPY button, which does allow them to be reprogrammed.-->
                             <!--</p>-->
                         <!--</div>-->
                     <!--</div>-->
+                    <!-- Castellano -->
+                    <div class="instructions-container"
+                        <p> <span class="panel-title" id="instructions-title" data-toggle="popover" data-original-title="" title="">Última actualización: Octubre 2018</span> </p>
+                        <div class="update">
+                            <p><strong>Versión 7</strong></p>
+                            <p>
+                                Esta nueva actualización para JMA K-Prox aumenta el rango de llaves de proximidad que se
+                                pueden duplicar. Algunas llaves que no podían ser copiadas en la versión anterior,
+                                 pueden ahora ser copiadas utilizando la nueva opción de programación “full-copy”, la
+                                cual puede activarse presionado el botón COPY durante al menos 5 segundos.
+                                Este nuevo método alternativo de copia no permite que las llaves puedan ser
+                                reprogramadas. No obstante, al igual que la versión anterior, la reprogramación de las
+                                llaves de proximidad se mantiene mientras no se aplique el citado método, es decir,
+                                aplicando una pulsación corta (menos de 5 segundos) del botón COPY.
+                            </p>
+                        </div>
+                    </div>
                     <div id="com-senscape-widget-bootloader-instance">
                         <p class="sample">Senscape Bootloader Widget goes here</p>
                     </div>
